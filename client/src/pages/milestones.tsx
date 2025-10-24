@@ -89,15 +89,15 @@ export default function Milestones() {
                       Rewards:
                     </p>
                     <ul className="space-y-1 text-sm">
-                      {milestone.rewards.slice(0, 2).map((reward, idx) => (
+                      {(milestone.rewards || []).slice(0, 2).map((reward, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <span className="text-primary mt-0.5">•</span>
                           <span className="text-card-foreground">{reward}</span>
                         </li>
                       ))}
-                      {milestone.rewards.length > 2 && (
+                      {(milestone.rewards || []).length > 2 && (
                         <li className="text-muted-foreground text-xs">
-                          +{milestone.rewards.length - 2} more...
+                          +{(milestone.rewards || []).length - 2} more...
                         </li>
                       )}
                     </ul>
@@ -152,7 +152,7 @@ export default function Milestones() {
                   All Rewards
                 </h4>
                 <ul className="space-y-2">
-                  {selectedMilestone.rewards.map((reward, idx) => (
+                  {(selectedMilestone.rewards || []).map((reward, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm">
                       <span className="text-primary mt-0.5">•</span>
                       <span>{reward}</span>
