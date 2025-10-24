@@ -116,7 +116,7 @@ export default function FreeSpins() {
                       <h3 className="text-lg font-semibold">Requirements</h3>
                       <Card className="p-4 bg-muted">
                         <ul className="space-y-2">
-                          {offer.requirements.map((req, idx) => (
+                          {(offer.requirements || []).map((req, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm">
                               <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                               <span>{req}</span>
